@@ -9,7 +9,9 @@ return spliced array
 const removeFromArray = function(givenArray, ...otherArguments) {
     for (arg of otherArguments) {
         let index = givenArray.indexOf(arg);
-        givenArray.splice(index,1);
+        if (index >= 0) {
+            givenArray.splice(index,1);
+        }
     }
     return givenArray;
 };
